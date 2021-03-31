@@ -1,0 +1,72 @@
+<html>
+<head>
+<script>
+function sendForm(){
+hen_sei=window.document.forms[0].elements[0].value;
+hen_mei=window.document.forms[0].elements[1].value;
+hen_mail=window.document.forms[0].elements[2].value;
+if(window.document.forms[0].elements[3].checked==true)
+{hen_seibetsu="男性";}else{hen_seibetsu="女性";}
+
+	function ch_Name(va){
+	if(va=="com"){return"グルメ"};
+	if(va=="rb"){return"テーマパーク"};
+	if(va=="sp"){return"美容"};
+	if(va=="od"){return"ショッピング"};
+	if(va=="sn"){return"徒歩"};
+	}
+var hen_hyouji="";
+	for(i=5;i<=9;i++){
+	if(window.document.forms[0].elements[i].checked==true){
+	hen_hyouji=hen_hyouji+ch_Name(window.document.forms[0].elements[i].value)+",";
+	}
+	}
+hen_kansou=window.document.forms[0].elements[10].value;
+window.document.write("姓名：",hen_sei + hen_mei + hen_kansou,"<br>メールアドレス：",hen_mail,"<br>性別：",hen_seibetsu,"<br>興味：",hen_hyouji,"<br>意見・感想：",hen_kansou);
+}
+</script>
+	<meta charset="utf-8">
+	<title>お問い合わせフォーム</title>
+	<link rel="stylesheet" href="CSS/style.css" type="text/css">
+</head>
+<body>
+<div id="page">
+<header>
+<h1>お散歩しませんか?</h1>
+</header>
+<article>
+<h2>当サイトへのご意見、ご感想をお寄せください。</h2>
+<h3>メールアドレスをお書きいただいた方には、お得な情報をお送りいたします。</h3>
+<form>
+姓<input type="text" size="10">
+名<input type="text" size="10"><br>
+メールアドレス<input type="text" size="30"><br><br>
+性別<br>
+男性<input type="radio" value="m">
+女性<input type="radio" value="f"><br><br>
+興味のあること<br>
+<input type="checkbox" value="com">グルメ<br>
+<input type="checkbox" value="rb">テーマパーク<br>
+<input type="checkbox" value="sp">美容<br>
+<input type="checkbox" value="od">ショッピング<br>
+<input type="checkbox" value="sn">徒歩<br><br>
+ご意見・ご感想<br>
+<textarea name="kansou" cols="50" rows="3"></textarea><br><br>
+<input type="submit" value="送信" onclick="sendForm()">
+<input type="reset" value="キャンセル">
+</form>
+<p class ="side"><a href="index.html">BACK</a></p>
+</article>
+<nav>
+<ul>
+	<li><a href="index.html">Home</a></li>
+    	<li><a href="bridge.html">レインボーブリッジ</a></li>
+    	<li><a href="tower.html">東京タワー</a></li>
+	<li><a href="schedule.html">イベント情報</a></li>
+	<li class="select">お問い合わせ</li>
+</ul>
+</nav>
+<footer><small>copyright(C)2012-散歩 girl, All right reserved.</small></footer>
+</div>
+</body>
+</html>
